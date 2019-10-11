@@ -1,0 +1,289 @@
+/* ==UserStyle==
+@name           Politics & War Reskin
+@namespace      npowned/pnw-reskin
+@version        1.0.0
+@description    Theme utility for the online game Politics & War
+@author         Lord of Darkness
+@license        MIT
+@preprocessor   stylus
+@advanced select theme_mode "Theme Mode" ["default:Default", "light:Light", "dark:Dark"]
+@advanced color color_bg "Background color" #252830
+@advanced color color_secondary "Secondary color" #4A5568
+@advanced color color_border "Border color" #434857
+@advanced color color_header "Header color" #1E2127
+@advanced color color_text "Text color" #B9B8B8
+@advanced color color_link "Link color" #337AB7
+@advanced color color_nav_text "Navigation text color" #CFD2DA
+@advanced color color_badge_bg "New badge background color" #D9534F
+@advanced color color_badge_text "New badge text color" #FFF
+@advanced color color_success "Success color" #5CB85C
+@advanced color color_info "Info color" #1997C6
+@advanced color color_warning "Warning color" #F39C12
+@advanced color color_danger "Danger color" #E74C3C
+@advanced checkbox show_ads "Show player advertisements" 0
+==/UserStyle== */
+
+@-moz-document regexp("https?:\\/\\/politicsandwar\\.com(?!\\/forums|api).*") {
+    body {
+        background: color_bg !important;
+    }
+
+    hr {
+        border: 1px solid color_border;
+    }
+
+    #footer {
+        border-color: color_border;
+    }
+
+    h1, .achievement-showcase-title {
+        color: color_text;
+    }
+
+    a, #showextracities {
+        color: color_link;
+    }
+
+    if theme_mode == light {
+        .logo img, img[src$="laurel_wreath_left.png"], img[src$="laurel_wreath_right.png"] {
+            filter: grayscale(100%);
+        }
+    }
+    else if theme_mode == dark {
+        .logo img, img[src$="laurel_wreath_left.png"], img[src$="laurel_wreath_right.png"] {
+            filter: grayscale(100%) invert(90%);
+        }
+    }
+
+    .container {
+        width: 75%;
+        color: color_text;
+        background-color: color_bg;
+        box-shadow: none;
+    }
+
+    #rightcolumn {
+        color: color_text;
+    }
+
+    .informationbar {
+        background-color: color_header;
+    }
+
+    .columnheader {
+        background-color: color_header;
+        border: 1px solid color_secondary;
+    }
+
+    #rightcolumn {
+        color: color_text;
+    }
+
+    #leftcolumn {
+        padding: 0 15px 0 0;
+        color: color_text;
+    }
+
+    #leftcolumn span {
+        padding-left: 8px;
+        color: color_secondary;
+        font-size: 14px !important;
+        text-transform: uppercase;
+    }
+
+    #leftcolumn a > span {
+        color: color_text;
+    }
+
+    ul {
+        list-style-image: none;
+        list-style-type: none;
+    }
+
+    ul a {
+        padding: 10px;
+        color: color_nav_text;
+        border: none;
+    }
+
+    ul a:hover, ul a:focus {
+        color: color_nav_text;
+        background-color: color_secondary !important;
+        border-radius: 5px;
+        outline: none;
+        text-decoration: none;
+    }
+
+    li > span {
+        margin-left: 20px;
+        padding: 0.2em 0.6em 0.3em;
+        font-size: 5% !important;
+        font-style: normal !important;
+        color: color_badge_text !important;
+        text-align: center;
+        border-radius: 0.25em;
+        background-color: color_badge_bg;
+    }
+
+    .alert-info, .blue-msg {
+        background-color: color_info;
+        border-color: transparent;
+        color: #fff;
+    }
+
+    .alert-success {
+        background-color: color_success;
+        border-color: transparent;
+        color: #fff;
+    }
+
+    .alert-warning, .tutorial {
+        background-color: color_warning;
+        border-color: transparent;
+        color: #fff;
+    }
+
+    .alert-danger, .red-msg {
+        background-color: color_danger;
+        border-color: transparent;
+        color: #fff;
+    }
+
+    .progress {
+        background-color: color_header;
+    }
+
+    .progress-bar {
+        background-color: color_secondary;
+        color: color_text;
+    }
+
+    .btn-default {
+        color: color_text;
+        background-color: color_header;
+        border-color: color_secondary;
+    }
+
+    .btn-default:hover, .btn-default:focus {
+        color: color_text;
+        background-color: color_secondary;
+        border-color: color_secondary;
+    }
+
+    input[type="submit"], .btn-primary {
+        text-align: center;
+        color: color_info;
+        background-color: transparent;
+        border: 1px solid color_info;
+        border-radius: 4px;
+    }
+
+    input[type="submit"]:hover, .btn-primary:hover {
+        background-color: color_info;
+        color: #fff;
+    }
+
+    .btn-warning {
+        border: 1px solid color_warning !important;
+        background-color: transparent !important;
+        border-radius: 4px !important;
+        color: color_warning !important;
+    }
+
+    input[value="Destroy"], input[value="-"], .btn-danger {
+        border: 1px solid color_danger !important;
+        background-color: transparent !important;
+        border-radius: 4px !important;
+        color: color_danger !important;
+    }
+
+    input[value="+"] {
+        border: 1px solid color_success !important;
+        background-color: transparent !important;
+        border-radius: 4px !important;
+        color: color_success !important;
+    }
+
+    .btn-warning:hover {
+        background-color: color_warning !important;
+        color: #fff !important;
+    }
+    input[value="Destroy"]:hover, input[value="-"]:hover, .btn-danger:hover {
+        background-color: color_danger !important;
+        color: #fff !important;
+    }
+
+    input[value="+"]:hover {
+        background-color: color_success !important;
+        color: #fff !important;
+    }
+
+    input[name="maximum"], input[name="minimum"] {
+        width: 50px !important;
+    }
+
+    .bankForm {
+        width: 100% !important;
+    }
+
+    input[type="text"], input[type="number"], textarea {
+        background-color: color_secondary;
+        color: color_text;
+        border: none;
+        box-shadow: none;
+    }
+
+    input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
+        filter: brightness(125%);
+        border: none;
+        box-shadow: none;
+    }
+
+    select {
+        if theme_mode == light or theme_mode == default {
+            background: color_secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23111' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+        }
+        else if theme_mode == dark {
+            background: color_secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23ccc' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+        }
+        background-clip: padding-box;
+        background-size: 8px 10px;
+        padding: 0.5em 3.5em 0.5em 1em;
+        color: color_text;
+        border: none;
+        box-shadow: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+    select:focus {
+        padding: 0.5em 3.5em 0.5em 1em;
+        border: none;
+        box-shadow: none;
+    }
+
+    if not show_ads {
+        .alert-info:nth-of-type(1) {
+            display: none;
+        }
+    }
+
+    .nationtable tr, table.nationtable td {
+        border: 1px solid color_border;
+    }
+
+    table.nationtable td, table.nationtable tr {
+        background-color: color_bg !important;
+    }
+
+    .nationtable tr > th {
+        background-color: color_header;
+    }
+
+    .battleTable td:hover {
+        background-color: transparent !important;
+    }
+}
